@@ -161,7 +161,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Data Nilai</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $pembayaran ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $krs ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -215,7 +215,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Data Biaya Kuliah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jadwal ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $komponen_biaya ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-2x text-gray-300"></i>

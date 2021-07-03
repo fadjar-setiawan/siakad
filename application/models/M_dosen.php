@@ -1,6 +1,6 @@
 <?php 
 
-class M_fakultas extends CI_model{
+class M_dosen extends CI_model{
 
 
     public function edit_data($where, $table){

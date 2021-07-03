@@ -5,7 +5,7 @@ class Datajurusan extends CI_Controller{
 	public function index()
 	{
 		$data['title'] = "Halaman Administrator";
-		$data['jurusan'] = $this->Penggajianmodel->get_data('jurusan')->result();
+		$data['rtn'] = $this->Penggajianmodel->load_jurusan();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
 		$this->load->view('admin/institusi/data_jurusan', $data);
@@ -16,7 +16,7 @@ class Datajurusan extends CI_Controller{
 	public function tambahdata()
 	{
 		$data['title'] = "Halaman Administrator";
-        $data['jurusan'] = $this->Penggajianmodel->get_data('jurusan')->result();
+        $data['fakultas'] = $this->Penggajianmodel->get_data('fakultas')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
 		$this->load->view('admin/institusi/tambahdatajurusan', $data);
@@ -26,26 +26,20 @@ class Datajurusan extends CI_Controller{
 	public function tambahdataaksi()
 	{
 		
-		$this->_rules();
-
-		if($this->form_validation->run() == FALSE) {
-			$this->tambahdata();
-
-
-		}else{
+		
 			$kdjur 				=$this->input->post('kdjur');
 			$nmjur 				=$this->input->post('nmjur');
-            $nmfak 				=$this->input->post('nmfak');
+            $kdfak 				=$this->input->post('kdfak');
 
 			$data = array(
 
 				'kdjur'	 		=> $kdjur,
 				'nmjur' 		=> $nmjur,
-                'nmfak'	 		=> $nmfak,
+                'kdfak'	 		=> $kdfak,
 			);
 
 
-			$this->Penggajianmodel->insert_data($data, 'jurusan');
+			$this->M_jurusan->tambah_data($data);
 			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
 											  <strong>Data berhasil di tambah</strong>
 											  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -53,9 +47,9 @@ class Datajurusan extends CI_Controller{
 													</button>
 														</div>');
 
-			redirect('admin/institusi/datajurusan');
+			redirect('admin/institusi/datajurusan/index');
 
-		}
+		
 		
 	}
 
@@ -79,7 +73,6 @@ class Datajurusan extends CI_Controller{
 			$kdfak 				=$this->input->post('kdfak');
 			$nmfak 				=$this->input->post('nmfak');
             $kdfak 				=$this->input->post('kdfak');
-			$nmfak 				=$this->input->post('nmfak');
 		
 
 			$this->M_jurusan->update_data($kdfak, $nmfak);
@@ -108,7 +101,7 @@ class Datajurusan extends CI_Controller{
 
 	public function deletedata($id)
 	{
-		$where = array('kdfak' => $id);
+		$where = array('kdjur' => $id);
 		$this->Penggajianmodel->delete_data($where,'jurusan');	
 		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
 											  <strong>Data berhasil di hapus</strong>

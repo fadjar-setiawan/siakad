@@ -42,10 +42,14 @@
                     </div>   
 
                     <div class="form-group">
-                        <label>Jenis</label>
-                        <input type="text" name="jenis" class="form-control mb-3">
+                              <label>Jenis</label>
+                              <select name="jenis" class="form-control">
+                                    <option value="">Pilih Jenis </option>
+                                    <option value="Teori">Teori</option>
+                                    <option value="Praktek">Praktek</option>
+                              </select>
                               <?php echo form_error('jenis','<div class="text-small text-danger"></div>') ?>
-                    </div>           	
+                    </div>          	
 				
 					<button type="submit" class="btn btn-success">Simpan</button>
                     <a href="<?php echo base_url('admin/baak/datamatakuliah') ?>"> <button type="button" class="btn btn-danger" >Batal</button></a>

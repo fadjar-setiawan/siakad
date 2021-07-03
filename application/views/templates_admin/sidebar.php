@@ -9,7 +9,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
                 
-                <div class="sidebar-brand-text mx-3"><h2><strong>SIAKAD</strong></h2></div>
+                <div class="sidebar-brand-text mx-3" ><h2><strong>SIAKAD</strong></h2></div>
             </a>
 
             <!-- Divider -->
@@ -48,7 +48,7 @@
                 <div id="multiCollapseExample2" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Mahasiswa</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datamahasiswa') ?>">Mahasiswa</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Kelas</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datamatakuliah') ?>">Matakuliah</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Kurikulum</a>
@@ -129,9 +129,10 @@
                 <div id="multiCollapseExample6" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataabsensi') ?>">Data Absensi</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Seting Potongan Gaji</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Data Gaji</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/system/datapengguna') ?>">Manajemen User</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Cek Duplikasi Data MHS</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Manajemen Video Display</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Pengumuman</a>
                     </div>
                 </div>
             </li>

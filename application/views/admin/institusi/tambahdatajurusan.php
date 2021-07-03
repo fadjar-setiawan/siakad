@@ -25,22 +25,22 @@
 
             		<div class="form-group">
             			<label>Kode</label>
-            			<input type="number" name="kdfak" class="form-control mb-3">
-                              <?php echo form_error('kdfak','<div class="text-small text-danger"></div>') ?>
+            			<input type="text" name="kdjur" class="form-control mb-3">
+                              <?php echo form_error('kdjur','<div class="text-small text-danger"></div>') ?>
             		</div>
 
                     <div class="form-group">
                         <label>Jurusan</label>
-                        <input type="text" name="nmfak" class="form-control mb-3">
-                              <?php echo form_error('nmfak','<div class="text-small text-danger"></div>') ?>
+                        <input type="text" name="nmjur" class="form-control mb-3">
+                              <?php echo form_error('nmjur','<div class="text-small text-danger"></div>') ?>
                     </div>        
 
                     <div class="form-group">
                               <label>Fakultas</label>
                               <select name="kdfak" class="form-control">
-                                    <option value="">--Pilih Fakultas--</option>
-                                    <?php foreach($fakultas as $f) : ?>
-                                    <option value="<?php echo $f->nmfak ?>"><?php echo $f->nmfak ?></option>
+                                    <option value="">Pilih Fakultas</option>
+                                    <?php foreach($fakultas as $p) : ?>
+                                    <option value="<?php echo $p->kdfak ?>"><?php echo $p->nmfak ?></option>
                               <?php endforeach; ?>
                               </select>
                               <?php echo form_error('fakultas','<div class="text-small text-danger"></div>') ?>
@@ -48,7 +48,7 @@
 
 
 					<button type="submit" class="btn btn-success">Simpan</button>
-                    <a href="<?php echo base_url('admin/institusi/datafakultas') ?>"> <button type="button" class="btn btn-danger" >Batal</button></a>
+                    <a href="<?php echo base_url('admin/institusi/datajurusan') ?>"> <button type="button" class="btn btn-danger" >Batal</button></a>
 
             		</form>
             	</div>

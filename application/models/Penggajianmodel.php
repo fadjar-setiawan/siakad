@@ -6,6 +6,26 @@ class Penggajianmodel extends CI_model{
 		return $this->db->get($table);
 	}
 
+	public function load_jurusan(){
+	$query3 = $this->db->query("SELECT jurusan.kdjur as kode, jurusan.nmjur as nama_jurusan, fakultas.nmfak as nama_fakultas FROM jurusan join fakultas on jurusan.kdfak=fakultas.kdfak order by jurusan.nmjur Asc");
+
+	foreach ($query3->result() as $row3)
+		{
+			
+	        $data[] =  array(
+				       'kode'			=> $row3->kode,
+				       'nama_jurusan'	=> $row3->nama_jurusan,
+				       'nama_fakultas'	=> $row3->nama_fakultas
+					   
+
+			);
+		}
+
+		$rtn = array('data'=>$data);
+
+		return $rtn; 
+	}
+
 	public function insert_data($data,$table){
 		$this->db->insert($table,$data);
 	}
