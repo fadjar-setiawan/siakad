@@ -10,6 +10,15 @@ class M_jurusan extends CI_model{
 		
 	}
 
+	public function update_data($table,$data,$where){
+		$this->db->update($table,$data,$where);
+	}
+
+	public function delete_data($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
 }
 
  ?>

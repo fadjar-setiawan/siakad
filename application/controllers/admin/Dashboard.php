@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller{
 		$users 				= $this->db->query("SELECT * FROM users");
 		$kelas 				= $this->db->query("SELECT * FROM kelas");
 		$kurikulum 			= $this->db->query("SELECT * FROM kurikulum");
+		$materibaru 		= $this->db->query("SELECT * FROM materibaru");
 		$krs 				= $this->db->query("SELECT * FROM krs");
 		$pembayaran 		= $this->db->query("SELECT * FROM pembayaran");
 		$jadwal 			= $this->db->query("SELECT * FROM jadwal");
@@ -23,6 +24,7 @@ class Dashboard extends CI_Controller{
 		$data ['users'] 				= $users->num_rows();
 		$data ['kelas'] 				= $kelas->num_rows();
 		$data ['kurikulum'] 			= $kurikulum->num_rows();
+		$data ['materibaru'] 			= $materibaru->num_rows();
 		$data ['krs'] 					= $krs->num_rows();
 		$data ['pembayaran'] 			= $pembayaran->num_rows();
 		$data ['jadwal'] 				= $jadwal->num_rows();

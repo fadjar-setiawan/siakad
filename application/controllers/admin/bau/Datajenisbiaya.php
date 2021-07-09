@@ -8,7 +8,7 @@ class Datajenisbiaya extends CI_Controller{
 		$data['jenis_komponen'] = $this->Penggajianmodel->get_data('jenis_komponen')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/bau/data_jenisbiaya', $data);
+		$this->load->view('admin/bau/datajenisbiaya/data_jenisbiaya', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -18,7 +18,7 @@ class Datajenisbiaya extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/bau/tambahdatajenisbiaya', $data);
+		$this->load->view('admin/bau/datajenisbiaya/tambahdatajenisbiaya', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -60,12 +60,12 @@ class Datajenisbiaya extends CI_Controller{
 
 	public function updatedata($id)
 	{
-		$where = array ('kdmatkul' => $id);
+		$where = array ('id_jenis' => $id);
 		$data['jenis_komponen'] = $this->db->query("SELECT * FROM jenis_komponen WHERE id_jenis ='$id'")->result();
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/bau/updatedatajenisbiaya', $data);
+		$this->load->view('admin/bau/datajenisbiaya/updatedatajenisbiaya', $data);
 		$this->load->view('templates_admin/foother');
 	}
 

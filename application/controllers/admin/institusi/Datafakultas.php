@@ -8,7 +8,7 @@ class Datafakultas extends CI_Controller{
 		$data['fakultas'] = $this->Penggajianmodel->get_data('fakultas')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/data_fakultas', $data);
+		$this->load->view('admin/institusi/datafakultas/data_fakultas', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -18,7 +18,7 @@ class Datafakultas extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/tambahdatafakultas', $data);
+		$this->load->view('admin/institusi/datafakultas/tambahdatafakultas', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -65,7 +65,7 @@ class Datafakultas extends CI_Controller{
 		$data['fakultas'] = $this->M_fakultas->edit_data($where, 'fakultas')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/updatedatafakultas', $data);
+		$this->load->view('admin/institusi/datafakultas/updatedatafakultas', $data);
 		$this->load->view('templates_admin/foother');
 	}
 

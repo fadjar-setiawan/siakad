@@ -51,13 +51,27 @@
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datamahasiswa') ?>">Mahasiswa</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Kelas</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datamatakuliah') ?>">Matakuliah</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Kurikulum</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Ploting Dosen</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datakurikulum') ?>">Kurikulum</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/baak/dataplotingdosen') ?>">Ploting Dosen</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Jadwal</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Handout</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Absen Dosen Teori</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Absen Mahasiswa</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Ujian</a>
+
+                        <div class="collapse-divider">
+                            <h6 class="collapse-header">Kartu Rencana Studi:</h6>
+                                <a class="collapse-item" href="404.html">Data KRS</a>
+                                <a class="collapse-item" href="blank.html">Cetak KRS</a>
+                            <h6 class="collapse-header">Nilai:</h6>
+                                <a class="collapse-item" href="404.html">Data Nilai</a>
+                                <a class="collapse-item" href="404.html">Cetak DNS</a>
+                            <h6 class="collapse-header">Laporan:</h6>
+                                <a class="collapse-item" href="404.html">Laporan Jadwal</a>
+                                <a class="collapse-item" href="404.html">Laporan Absensi Dosen</a>
+                                <a class="collapse-item" href="404.html">Laporan Absensi Mhsw</a>
+                                <a class="collapse-item" href="blank.html">Laporan Nilai</a>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -73,15 +87,27 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="<?php echo base_url('admin/bau/datajenisbiaya') ?>">Jenis Biaya</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/bau/datakomponenbiaya') ?>">Biaya</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datamatakuliah') ?>">Master Biaya</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Atur Biaya</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/bau/datamasterbiaya') ?>">Master Biaya</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/bau/dataaturbiaya') ?>">Atur Biaya</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Pembayaran</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Import Pembayaran</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Import Detail Pembayaran</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Virtual Acount</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/baak/datakelas') ?>">Virtual Acount Tambahan</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/bau/datanotifikasivirtualacount') ?>">Notifikasi Virtual Acount</a>
-                    </div>
+
+                        <div class="collapse-divider">
+                            <h6 class="collapse-header">Laporan:</h6>
+                                <a class="collapse-item" href="404.html">Absensi Dosen Teori</a>
+                                <a class="collapse-item" href="blank.html">Absensi Dosen Pratikum</a>
+                                <a class="collapse-item" href="blank.html">Absensi Asisten</a>
+                            <h6 class="collapse-header">Laporan Pembayaran:</h6>
+                                <a class="collapse-item" href="404.html">Trks Pembayaran Perhari</a>
+                                <a class="collapse-item" href="404.html">Trks Pembayaran Perbulan</a>
+                                <a class="collapse-item" href="404.html">Trks Pembayaran Pertahun</a>
+                                <a class="collapse-item" href="blank.html">Lap Virtual Account</a>
+                        </div>
+                    
                 </div>
             </li>
 
@@ -95,15 +121,17 @@
                 <div id="multiCollapseExample4" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataabsensi') ?>">Data Absensi</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Seting Potongan Gaji</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Data Gaji</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/laboratorium/dataasisten') ?>">Asisten</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Absensi Dosen</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Absensi Asisten</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Absensi Mahasiswa</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Laporan</a>                        
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+             <!--<li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#multiCollapseExample5"
                     aria-expanded="true" aria-controls="multiCollapseExample5">
                     <i class="fas fa-fw fa-money-check-alt"></i>
@@ -117,7 +145,7 @@
                         <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Data Gaji</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -130,9 +158,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?php echo base_url('admin/system/datapengguna') ?>">Manajemen User</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/potongangaji') ?>">Cek Duplikasi Data MHS</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Manajemen Video Display</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/datapenggajian') ?>">Pengumuman</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/system/datacekduplikasi') ?>">Cek Duplikasi Data MHS</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/system/datamanajemenvideo') ?>">Manajemen Video Display</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/system/datapengumuman') ?>">Pengumuman</a>
                     </div>
                 </div>
             </li>
@@ -145,11 +173,11 @@
 
 
             
-            <li class="nav-item">
+          <!--  <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin/ubahpassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ubah Password</span></a>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">

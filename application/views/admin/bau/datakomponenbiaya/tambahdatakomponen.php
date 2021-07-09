@@ -21,31 +21,30 @@
             <div class="card" style="width: 100%; margin-bottom: 100px ">
             	<div class="card-body">
             		
-            		<form method="POST" action="<?php echo base_url('admin/bau/datajenisbiaya/tambahdataaksi') ?>" enctype="multipart/form-data">
+            		<form method="POST" action="<?php echo base_url('admin/bau/datakomponenbiaya/tambahdataaksi') ?>" enctype="multipart/form-data">
 
 
                     <div class="form-group">
                         <label>Kode</label>
                         <input type="text" name="kode" class="form-control mb-3">
                               <?php echo form_error('kode','<div class="text-small text-danger"></div>') ?>
-                    </div>
+                    </div> 
 
                     <div class="form-group">
                         <label>Komponen Biaya</label>
                         <input type="text" name="nama_komponen" class="form-control mb-3">
                               <?php echo form_error('nama_komponen','<div class="text-small text-danger"></div>') ?>
-                    </div>   
+                    </div> 
 
                     <div class="form-group">
                               <label>Komponen Biaya</label>
-                              <select name="nama_komponen" class="form-control">
-                                    <option value="">Pilih Komponen Biaya</option>
-                                    <?php foreach($jenis_komponen as $j) : ?>
-                                    <option value="<?php echo $j->id_jenis ?>"><?php echo $j->jenis_komponen ?></option>
+                              <select name="id_jenis" class="form-control">
+                              <option value="">Pilih Komponen Biaya</option>
+                                    <?php foreach($jenis_komponen as $p) : ?>
+                                    <option value="<?php echo $p->id_jenis ?>"><?php echo $p->jenis_komponen ?></option>
                               <?php endforeach; ?>
                               </select>
-                              <?php echo form_error('id_jenis','<div class="text-small text-danger"></div>') ?>
-                        </div>
+                        </div>  
         	
 				
 					<button type="submit" class="btn btn-success">Simpan</button>

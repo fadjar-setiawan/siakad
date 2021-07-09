@@ -8,7 +8,7 @@ class Datamatakuliah extends CI_Controller{
 		$data['matakuliah'] = $this->Penggajianmodel->get_data('matakuliah')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/data_matakuliah', $data);
+		$this->load->view('admin/baak/datamatakuliah/data_matakuliah', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -18,7 +18,7 @@ class Datamatakuliah extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/tambahdatamatakuliah', $data);
+		$this->load->view('admin/baak/datamatakuliah/tambahdatamatakuliah', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -69,7 +69,7 @@ class Datamatakuliah extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/updatedatamatakuliah', $data);
+		$this->load->view('admin/baak/datamatakuliah/updatedatamatakuliah', $data);
 		$this->load->view('templates_admin/foother');
 	}
 

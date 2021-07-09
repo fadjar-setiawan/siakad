@@ -8,7 +8,7 @@ class Datamahasiswa extends CI_Controller{
 		$data['mahasiswa'] = $this->Penggajianmodel->get_data('mahasiswa')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/data_mahasiswa', $data);
+		$this->load->view('admin/baak/datamahasiswa/data_mahasiswa', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -18,7 +18,7 @@ class Datamahasiswa extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/tambahdatamahasiswa', $data);
+		$this->load->view('admin/baak/datamahasiswa/tambahdatamahasiswa', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -120,7 +120,7 @@ class Datamahasiswa extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/baak/updatedatamahasiswa', $data);
+		$this->load->view('admin/baak/datamahasiswa/updatedatamahasiswa', $data);
 		$this->load->view('templates_admin/foother');
 	}
 

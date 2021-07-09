@@ -38,18 +38,17 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php $no=1; foreach($komponen_biaya as $p) : ?>
+                                        <?php $no=1; foreach($rtn['data'] as $p) : ?>
                                             <tr>
                                                 <td><?php echo $no++ ?></td>
-                                                <td><?php echo $p->kode ?></td>
-                                                <td><?php echo $p->nama_komponen ?></td>
-                                                <td><?php echo $p->id_jenis ?></td>
-
+                                                <td><?php echo $p['kode_biaya'] ?></td>
+                                                <td><?php echo $p['nm_komponen'] ?></td>
+                                                <td><?php echo $p['jenis'] ?></td>
 
                                                 <td>
                                                     <center>
-                                                        <a class= "btn btn-sm btn-primary" href=" <?php echo base_url('admin/bau/datakomponenbiaya/updatedata/'.$p->kode) ?> "><i class="fas fa-edit"></i></a>
-                                                        <a onclick="return confirm ('Yakin Hapus')" class= "btn btn-sm btn-danger" href="<?php echo base_url('admin/bau/datakomponenbiaya/deletedata/'.$p->kode) ?> "><i class="fas fa-trash"></i></a>
+                                                        <a class= "btn btn-sm btn-primary" href=" <?php echo base_url('admin/bau/datakomponenbiaya/updatedata/'.$p['kode_biaya']) ?> "><i class="fas fa-edit"></i></a>
+                                                        <a onclick="return confirm ('Yakin Hapus')" class= "btn btn-sm btn-danger" href="<?php echo base_url('admin/bau/datakomponenbiaya/deletedata/'.$p['kode_biaya']) ?> "><i class="fas fa-trash"></i></a>
                                                     </center>
                                                 </td>
                                                 

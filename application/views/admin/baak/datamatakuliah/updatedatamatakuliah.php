@@ -28,10 +28,14 @@
             		</div>
 
                     <div class="form-group">
-                            <label>Jenis</label>
-                            <input type="text" name="jenis" class="form-control mb-3" value="<?php echo $p->jenis ?>">
+                              <label>Jenis</label>
+                              <select name="jenis" class="form-control" >
+                                    <option value="<?php echo $p->jenis ?>"><?php echo $p->jenis ?> </option>
+                                    <option value="Teori">Teori</option>
+                                    <option value="Praktek">Praktek</option>
+                              </select>
                               <?php echo form_error('jenis','<div class="text-small text-danger"></div>') ?>
-                    </div>
+                    </div> 
 
                     <div class="form-group">
                             <label>Matakuliah</label>

@@ -1,14 +1,14 @@
 <?php 
 
-class Datadosen extends CI_Controller{
+class Dataasisten extends CI_Controller{
 			
 	public function index()
 	{
 		$data['title'] = "Halaman Administrator";
-		$data['dosen'] = $this->Penggajianmodel->get_data('dosen')->result();
+		$data['asisten'] = $this->M_asisten->get_data('asisten')->result();
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/datadosen/data_dosen', $data);
+		$this->load->view('admin/laboratorium/data_asisten', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -18,7 +18,7 @@ class Datadosen extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/datadosen/tambahdatadosen', $data);
+		$this->load->view('admin/laboratorium/tambahasisten', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -32,41 +32,34 @@ class Datadosen extends CI_Controller{
 
 
 		}else{
-			$kode_dosen 			=$this->input->post('kode_dosen');
-			$nama_dosen 			=$this->input->post('nama_dosen');
-			$rfid 					=$this->input->post('rfid');
-			$password 				=$this->input->post('password');
-			$alamat 				=$this->input->post('alamat');
-			$telpon 				=$this->input->post('telpon');
-			$jenis_kelamin 			=$this->input->post('jenis_kelamin');
+			$kode_asisten 			=$this->input->post('kode_asisten');
+			$nama_asisten 			=$this->input->post('nama_asisten');
+            $alamat 				=$this->input->post('alamat');
+            $telepon 			    =$this->input->post('telepon');
+            $jenis_kelamin 			=$this->input->post('jenis_kelamin');
 			$tempat_lahir 			=$this->input->post('tempat_lahir');
 			$tanggal_lahir 			=$this->input->post('tanggal_lahir');
-			$pendidikan 			=$this->input->post('pendidikan');
-			$jabatan 				=$this->input->post('jabatan');
-			$golongan 				=$this->input->post('golongan');
-			$status_dosen	 		=$this->input->post('status_dosen');
-			$spesial_mengajar 		=$this->input->post('spesial_mengajar');
+            $status_asisten	 		=$this->input->post('status_asisten	');
+			$tgl_masuk 			    =$this->input->post('tgl_masuk');;
+			$foto        			=$this->input->post('foto');
 
 			$data = array(
 
-				'kode_dosen' 			=> $kode_dosen,
-				'nama_dosen' 			=> $nama_dosen,
-				'rfid' 					=> $rfid,
-				'password' 				=> $password,
-				'alamat' 				=> $alamat,
-				'telpon' 				=> $telpon,
-				'jenis_kelamin' 		=> $jenis_kelamin,
+				'kode_asisten' 			=> $kode_asisten,
+				'nama_asisten' 			=> $nama_asisten,
+                'alamat' 				=> $alamat,
+                'telepon' 		        => $telepon,
+                'jenis_kelamin' 		=> $jenis_kelamin,
 				'tempat_lahir' 			=> $tempat_lahir,
 				'tanggal_lahir' 		=> $tanggal_lahir,
-				'pendidikan' 			=> $pendidikan,
-				'jabatan' 				=> $jabatan,
-				'golongan' 				=> $golongan,
-				'status_dosen' 			=> $status_dosen,
-				'spesial_mengajar' 		=> $spesial_mengajar,
+                'status_asisten' 	    => $status_asisten,
+				'tgl_masuk' 			=> $tgl_masuk,
+				'tanggal_lahir' 		=> $tanggal_lahir,
+				'foto' 				    => $foto,
 			);
 
 
-			$this->Penggajianmodel->insert_data($data, 'dosen');
+			$this->M_asisten->insert_data($data, 'asisten');
 			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
 											  <strong>Data berhasil di tambah</strong>
 											  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -74,7 +67,7 @@ class Datadosen extends CI_Controller{
 													</button>
 														</div>');
 
-			redirect('admin/institusi/datadosen');
+            redirect('admin/laboratorium/dataasisten');
 
 		}
 		
@@ -89,7 +82,7 @@ class Datadosen extends CI_Controller{
 		$data['title'] = "Halaman Administrator";
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
-		$this->load->view('admin/institusi/datadosen/updatedatadosen', $data);
+		$this->load->view('admin/institusi/updatedatadosen', $data);
 		$this->load->view('templates_admin/foother');
 	}
 
@@ -129,7 +122,7 @@ class Datadosen extends CI_Controller{
 				);
 		
 				$where = array(
-					'kode_dosen' => $kode_dosen
+					'kode_asisten' => $kode_asisten
 				);
 		
 
@@ -140,8 +133,7 @@ class Datadosen extends CI_Controller{
 											    <span aria-hidden="true">&times;</span>
 													</button>
 														</div>');
-
-			redirect('admin/institusi/datadosen');
+            redirect('admin/laboratorium/dataasisten');
 
 		
 		
@@ -152,35 +144,24 @@ class Datadosen extends CI_Controller{
 
 	public function _rules()
 	{
-		$this->form_validation->set_rules('kode_dosen','Kode dosen','required');
-		$this->form_validation->set_rules('nama_dosen','Nama dosen','required');
-		$this->form_validation->set_rules('rfid','RFID','required');
+		$this->form_validation->set_rules('kode_asisten','Kode Asisten','required');
+		$this->form_validation->set_rules('nama_asisten','Nama Asisten','required');
 		$this->form_validation->set_rules('password','Password','required');
 		$this->form_validation->set_rules('alamat','Alamat','required');
-		$this->form_validation->set_rules('telpon','Telpon','required');
-		$this->form_validation->set_rules('jenis_kelamin','Jenis Kelamin','required');
-		$this->form_validation->set_rules('tempat_lahir','Tempat Lahir','required');
-		$this->form_validation->set_rules('tanggal_lahir','Tanggal Lahir','required');
-		$this->form_validation->set_rules('pendidikan','Pendidikan','required');
-		$this->form_validation->set_rules('jabatan','Jabatan','required');
-		$this->form_validation->set_rules('golongan','Golongan','required');
-		$this->form_validation->set_rules('status_dosen','Status Dosen','required');
-		$this->form_validation->set_rules('spesial_mengajar','Spesial Mengajar','required');
-
 		//$this->form_validation->set_rules('photo','photo','required');
 	}
 
 	public function deletedata($id)
 	{
-		$where = array('kode_dosen' => $id);
-		$this->Penggajianmodel->delete_data($where,'dosen');	
+		$where = array('kode_asisten' => $id);
+		$this->M_asisten->delete_data($where,'asisten');	
 		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
 											  <strong>Data berhasil di hapus</strong>
 											  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 											    <span aria-hidden="true">&times;</span>
 													</button>
 														</div>');
-			redirect('admin/institusi/datadosen');
+			redirect('admin/laboratorium/dataasisten');
 	}
 }
 
